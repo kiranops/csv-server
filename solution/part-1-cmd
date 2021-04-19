@@ -1,0 +1,18 @@
+
+To check the container running or not:
+
+	docker run infracloudio/csvserver:latest
+
+Enter into container:
+   
+       docker exec -it <container_id> /bin/bash
+
+Run the docker image with options:
+       
+       docker run -d -v /opt/infra-cloud/csvserver/solution/inputFile:/csvserver/inputdata -p 9393:9300 -e CSVSERVER_BORDER=Orange infracloudio/csvserver:latest
+
+      Options:
+	-d   Detached mode
+        -v   Host machine volume mapping with docker container
+        -p   Mapping port of host machine with docker container port
+        -e   To pass the enviroment variable which is defined in the docker image.
